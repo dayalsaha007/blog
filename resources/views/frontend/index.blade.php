@@ -1,4 +1,4 @@
-@extends('frontend.frontend_master')
+@extends('frontend.master_frontend')
 
 
 @section('nav_header')

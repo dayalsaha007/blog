@@ -18,6 +18,7 @@
         <!-- metis menu -->
         <link rel="stylesheet" href="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/css/metisMenu.min.css') }}">
         <link rel="stylesheet" href="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/css/mm-vertical-hover.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
         <!-- chart -->
 
         <!-- <link rel="stylesheet" href="asset('assets/plugins/chartjs-bar-chart/chart.css')"> -->
@@ -288,10 +289,10 @@
                       <li class="single-nav-wrapper">
                           <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="fas fa-table"></i></span>
-                              <span class="menu-text">table</span>
+                              <span class="menu-text">Blog Category</span>
                           </a>
                             <ul class="dashboard-menu">
-                              <li><a href="basic_table.html">Basic table</a></li>
+                              <li><a href="{{ route('view_category') }}">View Category</a></li>
                             </ul>
                       </li>
 
@@ -376,6 +377,7 @@
         <!-- pie chart -->
         <script src="{{ asset('panel/assets/plugins/pie_chart/chart.loader.js') }}"></script>
         <script src="{{ asset('panel/assets/plugins/pie_chart/pie.active.js') }}"></script>
+        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" ></script>
 
 
         <!-- Main js -->
