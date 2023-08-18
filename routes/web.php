@@ -34,6 +34,7 @@ Route::controller(CategoryController::class)->group(function(){
 
     Route::get('/view_category', 'view_category')->name('view_category');
     Route::get('/add_category', 'add_category')->name('add_category');
+    Route::post('/store/category', 'store_category');
 
 });
 

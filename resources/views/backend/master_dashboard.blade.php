@@ -1,391 +1,275 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
+        <title>@yield('page_title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="{{ asset('panel/assets/images/favicon.png') }}" >
-        <!--Page title-->
-        <title>
-            @yield('fav_name')
-        </title>
-        <!--bootstrap-->
-        <link rel="stylesheet" href="{{ asset('panel/assets/css/bootstrap.min.css') }}">
-        <!--font awesome-->
-        <link rel="stylesheet" href="{{ asset('panel/assets/css/all.min.css') }}">
-        <!-- metis menu -->
-        <link rel="stylesheet" href="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/css/metisMenu.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/css/mm-vertical-hover.css') }}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-        <!-- chart -->
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- <link rel="stylesheet" href="asset('assets/plugins/chartjs-bar-chart/chart.css')"> -->
-        <!--Custom CSS-->
-        <link rel="stylesheet" href="{{ asset('panel/assets/css/style.css') }}">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+
+        <!-- jvectormap -->
+        <link href="{{ asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/css/jquery-ui.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/css/metisMenu.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
     </head>
-    <body id="page-top">
-        <!-- preloader -->
-        <div class="preloader">
-            <img src="panel/assets/images/preloader.gif" alt="">
-        </div>
-        <!-- wrapper -->
-        <div class="wrapper">
 
-            <!-- header area -->
-            <header class="header_area">
-                <!-- logo -->
-                <div class="sidebar_logo">
-                    <a href="index.html">
-  <img src="{{ asset('panel/assets/images/logo.png') }}" alt="" class="img-fluid logo1">
-   <img src="{{ asset('panel/assets/images/logo_small.png') }}" alt="" class="img-fluid logo2">
-                    </a>
-                </div>
-                <div class="sidebar_btn">
-                    <button class="sidbar-toggler-btn"><i class="fas fa-bars"></i></button>
-                </div>
-                <ul class="header_menu">
-                    <li><a href="#" class="search_btn" data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a>
-                        <div class="modal fade search_box" id="myModal">
-                              <button type="button" class="close m-2 text-white float-right" data-dismiss="modal">&times;</button>
-                              <form action="#" class="modal-dialog modal-lg">
+    <body>
 
-                                <div class="modal-content bg-transparent">
-                                      <!-- Modal body -->
-                                      <div class="modal-body">
-                                        <input class="form-control bg-transparent text-white form-control-lg"  type="text" placeholder="Search...">
-                                        <button class="btn btn-lg submit-btn" type="submit">Search</button>
-                                      </div>
-                                </div>
+         <!-- Top Bar Start -->
+         <div class="topbar">
 
-                              </form>
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="../dashboard/crm-index.html" class="logo">
+                    <span>
+                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-small" class="logo-sm">
+                    </span>
+                    <span>
+                        <img src="{{ asset('backend/assets/images/logo.png') }}" alt="logo-large" class="logo-lg logo-light">
+                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-large" class="logo-lg">
+                    </span>
+                </a>
+            </div>
+            <!--end logo-->
+            <!-- Navbar -->
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-right mb-0">
+                    <li class="hidden-sm">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="javascript: void(0);" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            English <img src="{{ asset('backend/assets/images/flags/us_flag.jpg') }}" class="ml-2" height="16" alt=""/> <i class="mdi mdi-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="javascript: void(0);"><span> German </span><img src="{{ asset('backend/assets/images/flags/germany_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Italian </span><img src="{{ asset('backend/assets/images/flags/italy_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> French </span><img src="{{ asset('backend/assets/images/flags/french_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Spanish </span><img src="{{ asset('backend/assets/images/flags/spain_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><span> Russian </span><img src="{{ asset('backend/assets/images/flags/russia_flag.jpg') }}" alt="" class="ml-2 float-right" height="14"/></a>
                         </div>
                     </li>
-                    <li><a data-toggle="dropdown" href="#"><i class="far fa-envelope"></i><span>4</span></a>
-                        <div class="dropdown_wrapper messages_item dropdown-menu dropdown-menu-right">
-                            <div class="dropdown_header">
-                                <p>you have 4 messages</p>
-                            </div>
 
-                            <ul class="dropdown_body nice_scroll scrollbar">
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user1.jpg" alt="" class="img-fluid">
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            <i class="ti-bell noti-icon"></i>
+                            <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
+
+                            <h6 class="dropdown-item-text font-15 m-0 py-3 bg-primary text-white d-flex justify-content-between align-items-center">
+                                Notifications <span class="badge badge-light badge-pill">2</span>
+                            </h6>
+                            <div class="slimscroll notification-list">
+                                <!-- item-->
+                                <a href="#" class="dropdown-item py-3">
+                                    <small class="float-right text-muted pl-2">2 min ago</small>
+                                    <div class="media">
+                                        <div class="avatar-md bg-primary">
+                                           <i class="la la-cart-arrow-down text-white"></i>
                                         </div>
-                                        <div class="text-part">
-                                            <h6>Madelyn <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello Sam...</p>
+                                        <div class="media-body align-self-center ml-2 text-truncate">
+                                            <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
+                                            <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href="#" class="dropdown-item py-3">
+                                    <small class="float-right text-muted pl-2">10 min ago</small>
+                                    <div class="media">
+                                        <div class="avatar-md bg-success">
+                                            <i class="la la-group text-white"></i>
                                         </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user2.jpg" alt="" class="img-fluid">
+                                        <div class="media-body align-self-center ml-2 text-truncate">
+                                            <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
+                                            <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href="#" class="dropdown-item py-3">
+                                    <small class="float-right text-muted pl-2">40 min ago</small>
+                                    <div class="media">
+                                        <div class="avatar-md bg-pink">
+                                            <i class="la la-list-alt text-white"></i>
                                         </div>
-                                        <div class="text-part">
-                                            <h6>Melvin <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello jhon...</p>
+                                        <div class="media-body align-self-center ml-2 text-truncate">
+                                            <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
+                                            <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href="#" class="dropdown-item py-3">
+                                    <small class="float-right text-muted pl-2">1 hr ago</small>
+                                    <div class="media">
+                                        <div class="avatar-md bg-warning">
+                                            <i class="la la-truck text-white"></i>
                                         </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user3.jpg" alt="" class="img-fluid">
+                                        <div class="media-body align-self-center ml-2 text-truncate">
+                                            <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
+                                            <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
+                                <!-- item-->
+                                <a href="#" class="dropdown-item py-3">
+                                    <small class="float-right text-muted pl-2">2 hrs ago</small>
+                                    <div class="media">
+                                        <div class="avatar-md bg-info">
+                                            <i class="la la-check-circle text-white"></i>
                                         </div>
-                                        <div class="text-part">
-                                            <h6>Olinda <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello jhon...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user1.jpg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="text-part">
-                                            <h6>Johnson <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello Olinda...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user3.jpg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="text-part">
-                                            <h6>Madelyn <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello Sam...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user2.jpg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="text-part">
-                                            <h6>Melvin <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello jhon...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user3.jpg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="text-part">
-                                            <h6>Olinda <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello jhon...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <img src="panel/assets/images/user1.jpg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="text-part">
-                                            <h6>Johnson <span><i class="far fa-clock"></i> today</span></h6>
-                                            <p>Hello Olinda...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="dropdown_footer">
-                                <a href="#">See All Messages</a>
+                                        <div class="media-body align-self-center ml-2 text-truncate">
+                                            <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
+                                            <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                        </div><!--end media-body-->
+                                    </div><!--end media-->
+                                </a><!--end-item-->
                             </div>
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                                View all <i class="fi-arrow-right"></i>
+                            </a>
                         </div>
                     </li>
-                    <li><a href="#" data-toggle="dropdown"><i class="far fa-bell"></i><span>9</span></a>
-                        <div class="dropdown_wrapper notification_item dropdown-menu dropdown-menu-right">
-                            <div class="dropdown_header">
-                                <p>You have 9 notifications</p>
-                            </div>
-                            <ul class="dropdown_body scrollbar nice_scroll">
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-success"><i class="fas fa-users"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p>5 new members joined</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-danger"><i class="fas fa-exclamation-triangle"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> Very long description here that may...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-success"><i class="fas fa-cart-plus"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> 25 sales made</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-warning"><i class="fas fa-user"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> You changed your username</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-success"><i class="fas fa-users"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p>5 new members joined</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-danger"><i class="fas fa-exclamation-triangle"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> Very long description here that may...</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-success"><i class="fas fa-cart-plus"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> 25 sales made</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-part">
-                                            <span class="text-warning"><i class="fas fa-user"></i></span>
-                                        </div>
-                                        <div class="text-part">
-                                            <p> You changed your username</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="dropdown_footer">
-                                <a href="#">view All</a>
-                            </div>
+
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            <img src="../assets/images/users/user-1.png" alt="profile-user" class="rounded-circle" />
+                            <span class="ml-1 nav-user-name hidden-sm">Amelia <i class="mdi mdi-chevron-down"></i> </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Lock screen</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="#"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
                         </div>
                     </li>
-                    <li><a data-toggle="dropdown" href="#"><i class="far fa-user"></i></a>
-                            <div class="user_item dropdown-menu dropdown-menu-right">
-                                <div class="admin">
-                                    <a href="#" class="user_link"><img src="panel/assets/images/admin.jpg" alt=""></a>
-                                </div>
-                            <ul>
+                </ul><!--end topbar-nav-->
 
-                                <li><a href="#"><span><i class="fas fa-user"></i></span> User Profile</a></li>
-                                <li><a href=" "><span><i class="fas fa-cogs"></i></span>  Password Change</a></li>
-                                <li>
-
-                                    <a href=" "><span><i class="fas fa-unlock-alt"></i></span> Logout</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                <ul class="list-unstyled topbar-nav mb-0">
                     <li>
-
-                        <a class="responsive_menu_toggle" href="#"><i class="fas fa-bars"></i></a></li>
+                        <button class="nav-link button-menu-mobile waves-effect waves-light">
+                            <i class="ti-menu nav-icon"></i>
+                        </button>
+                    </li>
+                    <li class="hide-phone app-search">
+                        <form role="search" class="">
+                            <input type="text" id="AllCompo" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fas fa-search"></i></a>
+                        </form>
+                    </li>
                 </ul>
-            </header><!-- / header area -->
-            <!-- sidebar area -->
-            <aside class="sidebar-wrapper ">
-              <nav class="sidebar-nav">
-                 <ul class="metismenu" id="menu1">
-                    <li class="single-nav-wrapper">
-                        <a href="#" class="menu-item">
-                            <span class="left-icon"><i class="fas fa-home"></i></span>
-                            <span class="menu-text">Home</span>
-                        </a>
-                      </li>
-
-                      <li class="single-nav-wrapper">
-                          <a class="has-arrow menu-item" href="#" aria-expanded="false">
-                            <span class="left-icon"><i class="fas fa-table"></i></span>
-                              <span class="menu-text">Blog Category</span>
-                          </a>
-                            <ul class="dashboard-menu">
-                              <li><a href="{{ route('view_category') }}">View Category</a></li>
-                            </ul>
-                      </li>
+            </nav>
+            <!-- end navbar-->
+        </div>
+        <!-- Top Bar End -->
 
 
-                      <li class="single-nav-wrapper">
-                          <a class="has-arrow menu-item" href="#" aria-expanded="false">
-                            <span class="left-icon"><i class="far fa-copy"></i></span>
-                            <span class="menu-text">Other pages</span>
-                          </a>
-                          <ul class="dashboard-menu">
-                            <li><a href="login.html">Login</a></li>
-                          </ul>
-                      </li>
-                      <li class="single-nav-wrapper">
-                        <a href="{{ route('logout') }}" class="menu-item">
-                            <span class="left-icon"><i class="fas fa-home"></i></span>
-                            <span class="menu-text">Logout</span>
-                        </a>
-                      </li>
+        <!-- Left Sidenav -->
+        <div class="left-sidenav">
+            <ul class="metismenu left-sidenav-menu">
+
+                <li>
+                    <a href="javascript: void(0);"><i class="ti-server"></i><span>Category</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+
+                        <li class="nav-item"><a class="nav-link" href="{{ route('add_category') }}"><i class="ti-control-record"></i>Add Category</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view_category') }}"><i class="ti-control-record"></i>View Category</a></li>
+
 
                     </ul>
-              </nav>
-            </aside><!-- /sidebar Area-->
+                </li>
+
+            </ul>
+        </div>
+        <!-- end left-sidenav-->
+
+        <div class="page-wrapper">
+            <!-- Page Content-->
+            <div class="page-content">
+
+                <div class="container-fluid">
+
+
+                    @yield('content')
+
+                    {{--  <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-right">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Crovex</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Analytics</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->  --}}
 
 
 
 
 
 
-<div class="content_wrapper">
-    <!--middle content wrapper-->
-    <div class="middle_content_wrapper">
-        <!-- counter_area -->
 
+                </div><!-- container -->
 
-        @yield('content')
-
-
-
-
-
-
-
-        <!--/ counter_area -->
-        <!-- table area -->
-
-    </div><!--/middle content wrapper-->
-</div><!--/ content wrapper -->
+                <footer class="footer text-center text-sm-left">
+                    &copy; 2020 Crovex <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                </footer><!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
 
 
 
 
+        <!-- jQuery  -->
+        <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
+
+        <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/metismenu.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/waves.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/feather.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/jquery.slimscroll.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/jquery-ui.min.js') }}"></script>
+
+        <script src="{{ asset('backend/plugins/apexcharts/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('backend/plugins/moment/moment.js') }}"></script>
+        <script src="{{ asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+        <script src="{{ asset('backend/plugins/jvectormap/jquery-jvectormap-us-aea-en.js') }}"></script>
+        <script src="{{ asset('backend/assets/pages/jquery.analytics_dashboard.init.js') }}"></script>
 
 
+        <!-- App js -->
+        <script src="{{ asset('backend/assets/js/app.js')}}"></script>
+        <!--axios-->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-
-
-
-        </div><!--/ wrapper -->
-
-
-
-        <!-- jquery -->
-        <script src="{{ asset('panel/assets/js/jquery.min.js') }}"></script>
-        <!-- popper Min Js -->
-        <script src="{{ asset('panel/assets/js/popper.min.js') }}"></script>
-        <!-- Bootstrap Min Js -->
-        <script src="{{ asset('panel/assets/js/bootstrap.min.js') }}"></script>
-        <!-- Fontawesome-->
-        <script src="{{ asset('panel/assets/js/all.min.js') }}"></script>
-        <!-- metis menu -->
-        <script src="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/js/metismenu.js') }}"></script>
-        <script src="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/js/mm-vertical-hover.js') }}"></script>
-        <!-- nice scroll bar -->
-        <script src="{{ asset('panel/assets/plugins/scrollbar/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('panel/assets/plugins/scrollbar/scroll.active.js') }}"></script>
-        <!-- counter -->
-        <script src="{{ asset('panel/assets/plugins/counter/js/counter.js') }}"></script>
-        <!-- chart -->
-   <script src="asset('panel/assets/plugins/chartjs-bar-chart/Chart.min.js')"></script>
-        <script src="{{ asset('panel/assets/plugins/chartjs-bar-chart/chart.js') }}"></script>
-        <!-- pie chart -->
-        <script src="{{ asset('panel/assets/plugins/pie_chart/chart.loader.js') }}"></script>
-        <script src="{{ asset('panel/assets/plugins/pie_chart/pie.active.js') }}"></script>
-        <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" ></script>
-
-
-        <!-- Main js -->
-        <script src="{{ asset('panel/assets/js/main.js') }}"></script>
-
-
-            @yield('footer_script')
-
+        @yield('footer_script')
 
     </body>
+
 </html>

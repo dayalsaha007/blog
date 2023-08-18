@@ -1,7 +1,7 @@
 
 @extends('backend.master_dashboard')
 
-@section('fav_name')
+@section('page_title')
     Blog | Add Category
 @endsection
 
@@ -17,14 +17,11 @@
                                 <a href="{{ route('view_category') }}" class="btn btn-primary ">view Category</a>
                             </div>
                         <div class="card-body">
-                            <form action="" method="POST" >
+                            <form  id="category_form" >
                                 @csrf
 
                                 <label class="my-1">Category Name</label>
                                 <input type="text" class="form-control" id="c_name">
-
-                                <label class="my-1">Category slug</label>
-                                <input type="text" class="form-control" id="c_slug">
 
                                 <label class="my-1">Order By</label>
                                 <input type="number" class="form-control" min="1" id="order_by">
@@ -36,7 +33,7 @@
                                         <option value="0">Deactive</option>
                                 </select>
 
-                                <button type="submit" class="btn btn-primary mt-3">Save Category</button>
+                                <button type="button" id="add_category" class="btn btn-primary mt-3 ">Save Category</button>
 
                             </form>
                         </div>
@@ -46,11 +43,32 @@
         </div>
 
 
-
 @endsection
 
 @section('footer_script')
 
+<script>
+
+    $(document).ready(function(){
+        $("#add_category").click(function(e){
+            e.preventDefault();
+
+
+                var c_name = $('#c_name').val();
+                var order_by = $('#order_by').val();
+                var status = $('#status').val();
+
+
+                axios.post(`/store/category`, { c_name:c_name, order_by:order_by, status:status })
+                .then((res)=>{
+                    console.log(res.data);
+                    $('#category_form')[0].reset();
+                })
+
+
+        });
+    });
+</script>
 
 
 
